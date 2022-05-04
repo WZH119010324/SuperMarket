@@ -1,4 +1,3 @@
-from re import A
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
@@ -36,7 +35,7 @@ def something(request):
     # respond: redirect
     return redirect("https://www.baidu.com")
 
-from app.models import Address
+from backend_sample.app.models import Address
 
 def orm(request):
     # insertion
