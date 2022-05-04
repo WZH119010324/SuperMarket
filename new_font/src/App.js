@@ -10,7 +10,7 @@ import { MenuUnfoldOutlined,
 import 'antd/dist/antd.css';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import PageOne from './pages/PageOne';
 
 
 
@@ -31,12 +31,12 @@ function App() {
             defaultOpenKeys={['sub1']}
             mode="inline"
           >
-            <Menu.Item key="1" onClick ={() =>{setDisplayPage('home');}} icon={<HomeOutlined size={18}></HomeOutlined>}>HomePage</Menu.Item>
-            <Menu.Item key="2" onClick ={() =>{setDisplayPage('friend');}} icon={<UserOutlined size={18} ></UserOutlined>}>Friend</Menu.Item>
-            <Menu.Item key="3" onClick ={() =>{setDisplayPage('message')}} icon={<BellOutlined size={18} ></BellOutlined>}>Message</Menu.Item>
-            <Menu.Item key="4" onClick ={() =>{setDisplayPage('planet')}} icon={<RocketOutlined size={18} />}>Planet</Menu.Item>
+            <Menu.Item key="1" onClick ={() =>{setDisplayPage('home');}} icon={<HomeOutlined size={18}></HomeOutlined>}>Page1</Menu.Item>
+            <Menu.Item key="2" onClick ={() =>{setDisplayPage('friend');}} icon={<UserOutlined size={18} ></UserOutlined>}>Page2</Menu.Item>
+            <Menu.Item key="3" onClick ={() =>{setDisplayPage('message')}} icon={<BellOutlined size={18} ></BellOutlined>}>Page3</Menu.Item>
+            <Menu.Item key="4" onClick ={() =>{setDisplayPage('planet')}} icon={<RocketOutlined size={18} />}>Page4</Menu.Item>
         </Menu>
-        
+        {displayPage === 'home'?<PageOne></PageOne>:null}
       
 
     </div>
