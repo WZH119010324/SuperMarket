@@ -1,0 +1,344 @@
+.page-1{
+  height: 100vh;
+  display: flex;
+  background-color: white;
+}
+
+.logo{
+  margin-top: -20px;
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+
+.avatar{
+  margin-top: 15%;
+  height: 60px;
+  width: 80%;
+  margin-left: 5%;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 5%;
+}
+
+.newMoment{
+  margin-top: 15%;
+  border-style: none;
+  width: 70%;
+  font-weight: bold;
+  height: 50px;
+  font-size: 18px;
+}
+
+.ant-btn-primary:hover, .ant-btn-primary:focus {
+  color: #fff;
+  background: #ed9b52;
+  border-color: #ed9b52;
+}
+.avatarName{
+  width: 60%;
+  margin-left: 10%;
+  line-height: 30px;
+  font-size: 30px;
+  font-weight: 700;
+  overflow-wrap:break-word;
+}
+
+.left-menu{
+  border-right-style: solid ;
+  border-right-width: 1.5px;
+  border-right-color: RGB(85,95,163,0.3);
+  width: 20%;
+  height: 100vh;
+  /* overflow-y: scroll; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.left_logo{
+  width : 35px;
+  height: 35px;
+  ;
+}
+
+.menuItem{
+  margin-top: 10%;
+  width: 70%;
+  margin-left: 10%;
+  display: flex;
+}
+
+h2{
+  margin-left: 20%;
+  font-size: 23px;
+  font-weight: 400;
+  line-height: 23px;
+  color: #9c9c9c;
+}
+
+.test{
+  flex-shrink: 0;
+  
+  margin-top: 20px;
+  height: 300px !important;
+  width: 80%;
+}
+
+.test button {
+  width: 20%; /* Set a width if needed */
+  height: 20%;
+  margin-top: 3% !important;
+
+  display: block; /* Make the buttons appear below each other */
+  border-radius: 50%
+}
+
+.right-part{
+  height: 100%;
+  width: 82%;
+  overflow: hidden;
+}
+
+.ant-card-meta-title {
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  font-size: 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.ant-card-meta-description {
+  color: rgba(255, 255, 255, 0.45);
+  text-align: center;
+}
+
+#uploadimg1 {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+}
+
+.ant-card-bordered {
+  border: 1px solid #f0f0f0;
+  border-radius: 15px;
+  border-style: none;
+  /* background: linear-gradient(45deg, #555fa3 0, #555fa3 50%, #ed9b52 0, #ed9b52 100%); */
+}
+
+.person-form {
+  border-radius: 15px;
+  margin-top: 3% !important;
+  margin-left: 3%;
+  margin-right: 3%;
+  font-size: 10px;
+  width: 70%;
+
+  max-height: 100%;
+  padding: 3% 3% 3% 3% !important;
+  fill-opacity: 0.5;
+}
+
+.switch-form {
+  border-radius: 15px;
+  margin-top: 3% !important;
+  font-size: 10px;
+  width: 30%;
+
+  max-height: 100%;
+  padding: 3% 3% 3% 3% !important;
+  fill-opacity: 0.5;
+}
+
+.item-menu{
+  display: flex;
+  flex-direction: column;
+  height: 40%;
+  width:100%;
+  align-items: center;
+  margin-top: 25%;
+  margin-bottom: 10%;
+  justify-content: space-between;
+}
+
+.top-bar{
+  overflow-x: scroll;
+  scroll-behavior: smooth ;
+  padding: 15px 1px 15px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  height: 130px;
+  width: 100%;
+  border-bottom-width: 1.5px;
+  border-bottom-style:solid ;
+  border-bottom-color: RGB(85,95,163,0.3);
+}
+
+.content{
+  display: flex;
+  height: 100%;
+}
+
+.content-moment{
+  overflow-y: scroll !important;
+  /* height: 100% !important; */
+  width: 75%;
+  border-right-style: solid;
+  border-right-color: RGB(85,95,163,0.3);
+  border-right-width: 1.5px ;
+}
+.search-input {
+  border-radius: 15px;
+  display: flex;
+  
+}
+.person-button{
+  width:50px;
+  height:50px;
+  border-radius: 50% !important;
+
+}
+.switch-button{
+  background-color: rgb(230, 230, 237);
+  margin: 5px;
+  width:50px;
+  height:50px;
+  border-radius: 10% !important;
+
+}
+.Button_1{
+
+  width:50px;
+  height:50px;
+  border-radius: 50% !important;
+}
+
+.left-menu-icon{
+  width:50px;
+  height:50px;
+  border-radius: 50% !important;
+
+}
+.Button_top{
+
+  color: #000000 !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  background-color:rgba(172, 167, 167, 0.9) !important;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  border-width: 0ch !important;
+  margin-right: 50px;
+  margin-left: 50px;
+  
+  width:50px;
+  height:50px;
+  border-radius: 50% !important;
+}
+
+.form1{
+  border-radius: 15px;
+  margin-top: 3% !important;
+  font-size: 10px;
+  width: 30%;
+
+  max-height: 100%;
+  background-color: rgba(255,255,255,0.9);
+  padding: 3% 3% 3% 3% !important;
+  fill-opacity: 0.5;
+  display: block;
+}
+.form2{
+  border-radius: 15px;
+  margin-top: 3% !important;
+  font-size: 10px;
+  width: 30%;
+
+  max-height: 100%;
+  background-color: rgba(255,255,255,0.9);
+  padding: 3% 3% 3% 3% !important;
+  fill-opacity: 0.5;
+  display: none;
+}
+.form3{
+  border-radius: 15px;
+  margin-top: 3% !important;
+  font-size: 10px;
+  width: 30%;
+
+  max-height: 100%;
+  background-color: rgba(255,255,255,0.9);
+  padding: 3% 3% 3% 3% !important;
+  fill-opacity: 0.5;
+  display: none;
+}
+/* 滚动条相关设置 */
+::-webkit-scrollbar
+
+{
+    display: none;
+
+}
+/* 滑块 */
+/* ::-webkit-scrollbar-thumb { 
+  background-color: RGB(85,95,163,0.5);
+  border-radius: 10px;
+} */ 
+
+#components-layout-demo-custom-trigger .trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#components-layout-demo-custom-trigger .trigger:hover {
+  color: #1890ff;
+}
+
+#components-layout-demo-custom-trigger .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+.ant-menu-item-selected {
+  border-style: none;
+}
+
+.ant-menu-item-active {
+}
+
+.ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  transform: scaleY(0.0001);
+  opacity: 0;
+  transition: transform 0.15s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.15s cubic-bezier(0.215, 0.61, 0.355, 1);
+  content: '';
+}
+
+.ant-menu-item{
+  height: 8% !important;
+  font-size: 15px;
+}
+
+.cardTitle{
+  width: 80%;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  margin-top: -15px;
+}
