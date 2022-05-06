@@ -24,7 +24,7 @@ class Product(models.Model):
     ProductName = models.CharField(max_length=128, null=False)
 
 class Order(models.Model):
-    OrderID = models.CharField(max_length=32, unique=True, null=False)
+    OrderID = models.CharField(max_length=32, null=False)
     CustomerID = models.ForeignKey('Customer', on_delete=models.CASCADE)
     ProductID = models.ForeignKey('Product', on_delete=models.CASCADE)
     OrderDate = models.DateField(null=False)
@@ -48,6 +48,8 @@ class Address(models.Model):
 class customer_postal(models.Model):
     CustomerID = models.ForeignKey('Customer', on_delete=models.CASCADE)
     PostalCode = models.ForeignKey('Address', on_delete=models.CASCADE)
+    class Meta:
+        unique_together = [["CustomerID", "PostalCode"]]
 
 
 

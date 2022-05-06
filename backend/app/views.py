@@ -107,11 +107,8 @@ def load(request):
                 Customer_object = Customer.objects.filter(CustomerID = l[CustomerIDIndex]).first()
                 Product_object = Product.objects.filter(ProductID = l[ProductIDIndex]).first()
                 Order.objects.create(OrderID = l[OrderIDIndex], CustomerID = Customer_object, ProductID = Product_object, OrderDate = odate, ShipDate = sdate, ShipMode = l[ShipModeIndex], Sales = l[SalesIndex], Quantity = l[QuantityIndex], Discount = l[DiscountIndex], Profit = l[ProfitIndex])
-            except Exception as e:
-                # 访问异常的错误编号和详细信息
-                print(e.args)
-                print(str(e))
-                print(repr(e))
+            except:
+                pass
             try:
                 Address.objects.create(PostalCode = l[PostalCodeIndex], Segment = l[SegmentIndex], Country = l[CountryIndex], City = l[CityIndex], State = l[StateIndex], Region = l[RegionIndex])
             except:
