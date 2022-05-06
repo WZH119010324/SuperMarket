@@ -35,7 +35,7 @@ def something(request):
     # respond: redirect
     return redirect("https://www.baidu.com")
 
-from backend_sample.app.models import Address
+from app.models import Address
 
 def orm(request):
     # insertion
