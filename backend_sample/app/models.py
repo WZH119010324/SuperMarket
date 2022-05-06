@@ -13,12 +13,13 @@ create table app_userinfo(
 """
 
 class Address(models.Model):
-    PostalCode = models.ImageField(default=0)
+    PostalCode = models.IntegerField(primary_key = True)
     Segment = models.CharField(max_length=32, default="null")
     Country = models.CharField(max_length=32, default="null")
     City = models.CharField(max_length=32, default="null")
     State = models.CharField(max_length=32, default="null")
     Region = models.CharField(max_length=32, default="null")
+
 
 
 
