@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = # your secret key
+SECRET_KEY = "123"# your secret key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -84,9 +84,9 @@ WSGI_APPLICATION = 'CSC3170.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': ,       # your database name
-        'USER': ,       # your user name
-        'PASSWORD': ,   # your password
+        'NAME': 'csc3170',       # your database name
+        'USER': 'root',       # your user name
+        'PASSWORD': 'Wzh@1357',   # your password
         'HOST': '127.0.0.1',
         'PORT': 3306,
     }

@@ -16,6 +16,7 @@ create table app_userinfo(
 class Customer(models.Model):
     CustomerID = models.CharField(max_length=32, primary_key=True, unique=True, null=False)
     CustomerName = models.CharField(max_length=32, null=False)
+    Segment = models.CharField(max_length=32, null=False)
 
 class Product(models.Model):
     ProductID = models.CharField(max_length=32, primary_key=True, unique=True, null=False)
@@ -39,7 +40,6 @@ class Order(models.Model):
 
 class Address(models.Model):
     PostalCode = models.IntegerField(primary_key=True, unique=True, null=False)
-    Segment = models.CharField(max_length=32, null=False)
     Country = models.CharField(max_length=32, null=False)
     City = models.CharField(max_length=32, null=False)
     State = models.CharField(max_length=32, null=False)

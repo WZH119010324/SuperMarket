@@ -1,7 +1,7 @@
 from re import A
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
-
+import csv
 # Create your views here.
 
 # def index(request):
@@ -57,6 +57,67 @@ from django.shortcuts import redirect, render
 #     return HttpResponse("success")
 
 from app.models import Customer, Product, Order, Address, customer_postal
+
+
+def new_load(request):
+    #index
+    # OrderIDIndex = 1
+    # OrderDateIndex = 2
+    # ShipDateIndex = 3
+    # ShipModeIndex = 4
+    # CustomerIDIndex = 5
+    # CustomerNameIndex = 6
+    # SegmentIndex = 7
+    # CountryIndex = 8
+    # CityIndex = 9
+    # StateIndex = 10
+    # PostalCodeIndex = 11
+    # RegionIndex = 12
+    # ProductIDIndex = 13
+    # CategoryIndex = 14
+    # SubCategoryIndex = 15
+    # ProductNameIndex = 16
+    # SalesIndex = 17
+    # QuantityIndex = 18
+    # DiscountIndex = 19
+    # ProfitIndex = 20
+    #data initialization
+    csv_file = open('app/static/dataset/Superstore.csv','rt',encoding='unicode_escape')
+    csv_reader = list(csv.reader(csv_file))
+    i = 0
+    for row in csv_reader[1:]:
+        i = i + 1
+        ODate = row[2].split('/')
+        odate = ODate[2] + '-' + ODate[0] + '-' + ODate[1]
+        SDate = row[3].split('/')
+        sdate = SDate[2] + '-' + SDate[0] + '-' + SDate[1]
+        
+        try:
+            Customer.objects.create(CustomerID = row[5], CustomerName = row[6], Segment = row[7])
+        except:
+            pass
+        try:
+            Product.objects.create(ProductID = row[13], Category = row[14], SubCategory = row[15], ProductName = row[16])
+        except:
+            pass
+        try:
+            Customer_object = Customer.objects.filter(CustomerID = row[5]).first()
+            Product_object = Product.objects.filter(ProductID = row[13]).first()
+            Order.objects.create(OrderID = row[1], CustomerID = Customer_object, ProductID = Product_object, OrderDate = odate, ShipDate = sdate, ShipMode = row[4], Sales = row[17], Quantity = row[18], Discount = row[19], Profit = row[20])
+        except:
+            pass
+        try:
+            Address.objects.create(PostalCode = row[11],  Country = row[8], City = row[9], State = row[10], Region = row[12])
+        except:
+            pass
+        try:
+            Address_object = Address.objects.filter(PostalCode = row[11]).first()
+            customer_postal.objects.create(CustomerID = Customer_object, PostalCode = Address_object)
+        except:
+            pass
+        print('times: ', i)
+    return HttpResponse("The data has been loaded successfully. Please check the database.")
+
 
 def load(request):
     # data entry

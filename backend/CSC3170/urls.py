@@ -27,5 +27,6 @@ urlpatterns = [
     # path('something/', views.something),
     # path('orm/', views.orm),
 
-    path('load/', views.load)
+    path('load/', views.load),
+    path('newload/', views.new_load)
 ]
