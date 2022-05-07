@@ -1,6 +1,7 @@
 from re import A
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
+from django.db.models import Sum
 import csv
 # Create your views here.
 
@@ -60,28 +61,6 @@ from app.models import Customer, Product, Order, Address, customer_postal
 
 
 def new_load(request):
-    #index
-    # OrderIDIndex = 1
-    # OrderDateIndex = 2
-    # ShipDateIndex = 3
-    # ShipModeIndex = 4
-    # CustomerIDIndex = 5
-    # CustomerNameIndex = 6
-    # SegmentIndex = 7
-    # CountryIndex = 8
-    # CityIndex = 9
-    # StateIndex = 10
-    # PostalCodeIndex = 11
-    # RegionIndex = 12
-    # ProductIDIndex = 13
-    # CategoryIndex = 14
-    # SubCategoryIndex = 15
-    # ProductNameIndex = 16
-    # SalesIndex = 17
-    # QuantityIndex = 18
-    # DiscountIndex = 19
-    # ProfitIndex = 20
-    #data initialization
     csv_file = open('app/static/dataset/Superstore.csv','rt',encoding='unicode_escape')
     csv_reader = list(csv.reader(csv_file))
     i = 0
@@ -118,6 +97,19 @@ def new_load(request):
         print('times: ', i)
     return HttpResponse("The data has been loaded successfully. Please check the database.")
 
+
+def  return_top_products(request):
+    records = []
+    # queryset = Product.objects.all().values('ProductName').annotate(nums = Sum("Quantity"))
+    # print(queryset)
+    queryset = Product.objects.all()
+    for pd in queryset:
+        all_order = Order.objects.filter(ProductID=pd.ProductID)
+        total = Order.objects.filter(ProductID=pd.ProductID).aggregate(nums=Sum('Quantity'))
+        # print (pd.ProductID," : ",total['nums'])
+        records.append({'ProductID':pd.ProductID, 'ProductName': pd.ProductName, 'Category' : pd.Category, 'SubCategory' : pd.SubCategory, 'Sales' : total['nums']})
+    
+    return render(request, "TopCount.html", {"data_list": records})
 
 def load(request):
     # data entry

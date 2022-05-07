@@ -26,7 +26,7 @@ urlpatterns = [
     # path('user/add/', views.user_add),
     # path('something/', views.something),
     # path('orm/', views.orm),
-
     path('load/', views.load),
-    path('newload/', views.new_load)
+    path('newload/', views.new_load),
+    path('count/', views.return_top_products)
 ]
