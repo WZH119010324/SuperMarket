@@ -62,7 +62,7 @@ cannot exist without a customer. \par
 • $ProductID$ in $Order$ is a foreign key from $Order$ referencing $Customer$. 
 Explaination: $Order$ and $Product$ are linked through $ProductID$. In this way, we can refer to the product which was purchased in the specific order. An order cannot exist without a purchased product. \par
 • $PostalCode$ in $Order$ is a foreign key from $Order$ referencing $Address$. 
-Explaination: In this way, we can check the constraint that the combination of $CustomerID$ and $PostalCode$ should exist in $customer\_postal$. If not, we can reject the order, and ask whether the customer would like to update his or her address. \par
+Explaination: Explaination: In this way, we can refer to the deliver address where the purchased product should be delivered to with the specific order. And we can check the constraint that the combination of $CustomerID$ and $PostalCode$ should exist in $customer\_postal$. If not, we can reject the order, and ask whether the customer would like to update his or her address. \par
 • $CustomerID$ in $customer\_postal$ is a foreign key from $customer\_postal$ referencing $Customer$. And $PostalCode$ in $customer\_postal$ is a foreign key from $customer\_postal$ referencing $Address$. 
 Explaination: $Customer$ and $Address$ are linked through  $customer\_postal$. In this way, we can refer to the 
 address of a specific customer, and refer to the customer of a specific address, while saving a lot of memory. \par
