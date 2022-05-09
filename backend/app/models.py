@@ -35,6 +35,7 @@ class Order(models.Model):
     Quantity = models.IntegerField(null=False)
     Discount = models.FloatField(null=False)
     Profit = models.FloatField(null=False)
+    PostalCode = models.ForeignKey('Address', on_delete=models.CASCADE)
     class Meta:
         unique_together = [["OrderID", "CustomerID", "ProductID"]]
 

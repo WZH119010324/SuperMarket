@@ -82,7 +82,8 @@ def new_load(request):
         try:
             Customer_object = Customer.objects.filter(CustomerID = row[5]).first()
             Product_object = Product.objects.filter(ProductID = row[13]).first()
-            Order.objects.create(OrderID = row[1], CustomerID = Customer_object, ProductID = Product_object, OrderDate = odate, ShipDate = sdate, ShipMode = row[4], Sales = row[17], Quantity = row[18], Discount = row[19], Profit = row[20])
+            Address_object = Address.objects.filter(PostalCode = row[11]).first()
+            Order.objects.create(OrderID = row[1], CustomerID = Customer_object, ProductID = Product_object, OrderDate = odate, ShipDate = sdate, ShipMode = row[4], Sales = row[17], Quantity = row[18], Discount = row[19], Profit = row[20], PostalCode = Address_object)
         except:
             pass
         try:
